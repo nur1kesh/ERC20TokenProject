@@ -1,7 +1,10 @@
 # ERC20TokenProject
 
 ## Overview
-The **AITU_Nurassyl_SE-2327_Token (UTK)** is a custom ERC-20 token implemented using the OpenZeppelin library. It features basic ERC-20 functionality along with custom methods for retrieving transaction details. The contract is deployed on the Holesky Ethereum testnet.
+The **AITU_Nurassyl_SE-2327_Token (UTK)** is a custom ERC-20 token implemented using the OpenZeppelin library. The project includes:
+- A standard ERC-20 token with additional transaction tracking functionality.
+- A **modified version** (`AITU_Nurassyl_Modified.sol`) that allows setting an **initial supply** via the constructor.
+- Deployment on the **Holesky Ethereum testnet** using Hardhat.
 
 ## Features
 - Initial token supply: **2000 UTK**.
@@ -10,6 +13,11 @@ The **AITU_Nurassyl_SE-2327_Token (UTK)** is a custom ERC-20 token implemented u
   - Retrieve the sender, receiver, and timestamp of the latest transaction.
   - Timestamp in a human-readable format.
 - Deployment on the Holesky Ethereum testnet using Hardhat and MetaMask.
+
+### **Modified Token (`AITU_Nurassyl_Modified.sol`)**
+- Accepts **initial supply** as a **constructor parameter**.
+- Allows **dynamic initial supply allocation** at deployment.
+- Maintains **all features** of the original token.
 
 ## Usage
 
@@ -39,6 +47,17 @@ The **AITU_Nurassyl_SE-2327_Token (UTK)** is a custom ERC-20 token implemented u
    npx hardhat run deploy.js --network holesky
    ```
 4. Note the contract address displayed in the terminal.
+
+## **Testing**
+### ✅ Run All Tests
+```bash
+npx hardhat test
+```
+### ✅ Run Individual Tests
+```bash
+npx hardhat test test/AITU_Nurassyl.test.js
+npx hardhat test test/AITU_Nurassyl_Modified.test.js
+```
 
 ### Interacting with the Token
 1. Use the contract address and ABI to interact with the deployed token via tools like Etherscan or Web3.js.
